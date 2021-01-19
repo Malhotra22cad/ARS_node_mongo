@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   <!--google font for sofia-->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <!--bootstrap CDN-->
+    <!-- CSS only -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+     <!-- JS, Popper.js, and jQuery -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <!---->
+   <title>Airline Booking</title>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+ <div class="container">
+ <div class="jumbotron jumbotron-fluid " style="background-color: black;" >
+   <div class="container">
+   <center>
+     <h1 class="display-4" style="font-family: Times New Roman, Times, serif; color:lightseagreen " ><b>Airline Reservation System (CRUD)</b></h1>
+     <h4 class="lead" style="color:lightseagreen"><b>An Innitiative based on node.js, express.js and mongoDB!!</b></h4>
+		</center>
+   </div>
+   </div>
+
+
+   <marquee style="font-family:sofia; color: red; font-size:45px;">kindly navigate as and when provided and do provide an accessible email for appropriate responce!</marquee>
+   <br>
+ 
+<div class="row">  
+	
+  <div class="col-md-12">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><b>ARS</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link " href="bookflight">Book a flight</a>
+          <a class="nav-link" href="/viewflight">View your flight</a>
+          <a class="nav-link" href="/sample">Change your flight</a>
+           <a class="nav-link active" href="/delete">Cancel your flight</a>
+        </div>
+  </div>
+</nav>
+</div>
+</div>
+<br><br>
+<div class="jumbotron jumbotron-fluid" style="background-color: #000;">
+    <div class="container">
+      <center><h1 style="font-family:sofia; color:#fff"><b>Provide Detials to Delete Booking!!!</b></h1></center>
+<br>
+<form action="dell" method="POST">
+    <label><b>Ticket Number :</b></label>
+        <input id="ticket_number" name="ticket_number" type="text" placeholder="your ticket number" required>
+<br>
+<label><b>Full Name :</b></label>
+<input type="text" name="full_name" placeholder="Full Name" required >
+<br>
+<label><b>Email Address :</b></label>
+<input type="email" name="Email" placeholder="Email" required >
+<br><br><br>
+<center><button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;&nbsp;
+<button type="reset" class="btn btn-info">Clear Form</button></center>
+</form>
+</div>
+</div>
+</body>
+</html>

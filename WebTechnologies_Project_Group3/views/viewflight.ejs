@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   <!--google font for sofia-->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <!--bootstrap CDN-->
+    <!-- CSS only -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+     <!-- JS, Popper.js, and jQuery -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <!---->
+   <title>Airline Booking</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+ </head>
+ <body>
+  <div class="container">
+	<div class="jumbotron jumbotron-fluid " style="background-color: black;" >
+		<div class="container">
+		<center>
+      <h1 class="display-4" style="font-family: Times New Roman, Times, serif; color:lightseagreen " ><b>Airline Reservation System (CRUD)</b></h1>
+      <h4 class="lead" style="color:lightseagreen"><b>An Innitiative based on node.js, express.js and mongoDB!!</b></h4>
+		</center>
+		</div>
+	  </div>
+
+
+    <marquee style="font-family:sofia; color: red; font-size:45px;">kindly navigate as and when provided and do provide an accessible email for appropriate responce!</marquee>
+    <br>
+ 
+<div class="row">  
+	
+  <div class="col-md-12">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><b>ARS</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="bookflight">Book a flight</a>
+          <a class="nav-link active" href="/viewflight">View your flight</a>
+          <a class="nav-link" href="/sample">Change your flight</a>
+           <a class="nav-link" href="/delete">Cancel your flight</a>
+        </div>
+  </div>
+</nav>
+</div>
+</div>
+<br><br>
+
+<br>
+<div class="row">  
+  <h1 style="font-family:sofia; color:#000"><b>View your flight passengers!!!</b></h1>
+			 <div class="col-md-1">
+      </div>
+      
+			<div class="col-md-6">
+        <div class="jumbotron jumbotron-fluid" style="background-color: #000;">
+			<div class="container">
+        <% list.forEach(function(flight){ %>
+               
+          <div class="col-md-15">
+            <center><label style="font-size: 45px;">💺</label></center>
+                        <br>
+					 <label><b>Ticket Number :</b></label>
+					  <input id="ticket_number" name="ticket_number" value="<%= flight._id %>" type="text"  readonly>
+					  <br>
+					  <label><b>Full Name :</b></label>
+					  <input type="text" name="user_fname" placeholder="Full Name" value="<%= flight.user_fname%>" readonly >
+					  <br>
+					  <label><b>From :</b></label>
+					  <input type="text" name="user_name" placeholder="From" value="<%= flight.user_from %>" readonly >
+					  <br>
+					  <label><b>Departure :</b></label>
+					  <input type="text" name="user_depart" placeholder="user_dept" value="<%= flight.user_depart %>"  readonly>
+					  <br> 
+					  <label><b>To :</b></label>
+					  <input type="text" name="full_name" placeholder="to" value="<%= flight.user_to %>" readonly >
+					  <br>
+					  
+					  <label><b>Email Address :</b></label>
+					  <input type="text" name="Email" placeholder="Email"  value="<%= flight.user_email %>" readonly >
+					  <br>
+					  <label><b>Airlines :</b></label>
+					  <input type="text" name="full_name" placeholder="Airlines" value="<%= flight.user_airline %>" readonly >
+					  <br>
+					  <label><b>Seating :</b></label>
+					  <input type="text" name="full_name" placeholder="Seating" value="<%= flight.user_seating%>" readonly >
+                      <br>
+                      <label><b>--------------------------------------------------------------------------------------------------</b></label>     
+                      <!--<input type="submit" class="button" value="Edit">-->
+                    <br><br>
+                   
+					  
+					  
+                  </div>   
+                 
+                    <%  }); %>
+                    
+              <center>  <a href="/"><button type="button" class="btn btn-info" >Okay</button></a></center>      
+			</div>
+			</div>
+			</div>
+	</div>		
+</div>	
+</body>

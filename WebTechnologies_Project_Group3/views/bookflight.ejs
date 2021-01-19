@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   <!--google font for sofia-->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <!--bootstrap CDN-->
+    <!-- CSS only -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+     <!-- JS, Popper.js, and jQuery -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <!---->
+   <title>Airline Booking</title>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<div class="container">
+<div class="jumbotron jumbotron-fluid " style="background-color: black;" >
+   <div class="container">
+   <center>
+	 <h1 class="display-4" style="font-family: Times New Roman, Times, serif; color:lightseagreen " ><b>Airline Reservation System (CRUD)</b></h1>
+	 <h4 class="lead" style="color:lightseagreen"><b>An Innitiative based on node.js, express.js and mongoDB!!</b></h4>
+   </center>
+   </div>
+ </div>
+
+
+<marquee style="font-family:sofia; color: red; font-size:45px;">kindly navigate as and when provided and do provide an accessible email for appropriate responce!</marquee>
+<br>
+
+<div class="row">  
+	
+  <div class="col-md-12">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><b>BKSH-PA</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="#">Book a flight</a>
+          <a class="nav-link" href="/viewflight">View your flight</a>
+          <a class="nav-link" href="/sample">Change your flight</a>
+           <a class="nav-link" href="/delete">Cancel your flight</a>
+        </div>
+  </div>
+</nav>
+</div>
+</div>
+<br><br>
+
+
+	<div >
+			<div class="col-md-8" style="background-color:#000;">
+				<div class="jumbotron jumbotron-fluid" style="background-color: #000;">
+				   <div class="container">
+			   <!-- Form starts here -->
+			   <center><h1 style="font-family:sofia; color:#fff"><b>Flight Booking Form </b></h1></center>
+			   <form action="/save" method="post" >
+				   
+					<br><br>
+					<center><h3 class="sub-heading" style="background-color: #fff; color:#000">Booking Details</h3></center>
+				   <div class="main">
+					
+					   <div class="field-text1">
+						   <label>From : 
+						   <select class="form-control" name="user_from" required>
+											   <option selected="selected" disabled >none</option>
+											   <option value="India">India</option>
+											   <option value="Canada">Canada</option>
+											   <option value="America">U.S.A</option>
+											   <option value="China">China</option>
+											   <option value="Pakistan">Pakistan</option>
+											   <option value="Iran">Iran</option>
+										   </select></label>
+					   </div>=
+					   <div class="field-text2" >
+						   <label>To : 
+						   <select class="form-control" name="user_to" required>
+											   <option selected="selected" disabled >none</option>
+											   <option value="Bangladesh">Bangladesh</option>
+											   <option value="Afghanistaan">Afghanistaan</option>
+											   <option value="SriLanka">SriLanka</option>
+											   <option value="Iraq">Iraq</option>
+											   <option value="Japan">Japan</option>
+											   <option value="Indonesia">Indonesia</option>
+										   </select></label>
+					   </div>
+				   </div>
+				   <div class="main">
+					   <div class="field-text1">
+						   <label>Preferred Airline
+						   <select class="form-control" name="user_airline" required>
+											   <option selected="selected" disabled >none</option>
+											   <option value="Air Canada">Air Canada Airline</option>
+											   <option value="American Airline">American Airline</option>
+											   <option value="Delta Airlines">Delta Airlines</option>
+											   <option value="British Arirlines">British Arirlines</option>
+											   <option value="Cathey Pacific">Cathey Pacific Arirlines</option>
+											   <option value="Air India">Air India Airlines</option>
+										   </select></label>
+					   </div>
+					   <div class="field-text2">
+						   <label>Preferred Seating
+						   <select class="form-control" name="user_seating">
+											   <option selected="selected" disabled >none</option>
+											   <option value="Window">Window</option>
+											   <option value="Special">Special</option>
+										   </select></label>
+					   </div>
+				   </div>
+				   <div class="main">
+					   <div class="field-text1">
+					   <label>Departure: </label>
+						   <input id="datepicker" name="user_depart" type="date" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+							   required="">
+					   </div>
+					   
+	   
+				   
+				   <div class="radio-section">
+					   <label>Select your Fare: </label>
+					   <ul class="radio-buttons-w3-agileits" required>
+						   <li>
+							   <input type="radio" id="a-option" name="selector1">
+							   <label for="a-option">One Way</label>
+							   <div class="check"></div>
+						   </li>
+						   <li>
+							   <input type="radio" id="b-option" name="selector1">
+							   <label for="b-option">Round-Trip</label>
+							   <div class="check">
+								   <div class="inside"></div>
+							   </div>
+						   </li>
+					   
+					   </ul>
+					   
+		   
+				   </div>
+				   
+				   <br>
+				   <fieldset>
+					   <center>
+				   <h3 class="sub-heading" style="background-color: #fff; color:#000">Personal Details</h3>
+				   <div class="main">
+					   <div class="field-text1"><br>
+						   <input type="text" name="user_fname" placeholder="First Name" required="">
+					   </div><br>
+					   <div class="field-text2">
+						   <input type="text" name="user_lname" placeholder="Last Name" required="">
+					   </div><br>
+					   <div class="field-text3">
+						   <input type="phone" name="user_phone" placeholder="Phone Number" required="">
+					   </div>
+				   <br>
+				   <div class="field-text">
+					   <input type="email" name="user_email" placeholder="Email" required="" >
+				   </div><br>
+			   </div>
+		   </center>
+				   </fieldset>
+				   <center>
+				   <div class="clear"></div><br>
+				   <button type="submit" class="btn btn-primary" onclick="show_alert()">Submit</button>
+				   <button type="reset" class="btn btn-info">Clear Form</button>
+				   <br>
+				   <div class="clear"></div>
+			   </center>
+			   </form>
+			   </div>
+				<div class="col-md-2">
+				   </div>
+				   
+				   </div>
+				
+				   </div> 
+				   </div>
+				   </div>
+		 </div>
+		<div class="jumbotron">
+			<center><h3>kindly check your ticket number after booking, in <b>view your flight</b> for further references!! </h3></center>
+		</div>
+		</body>
+</html>

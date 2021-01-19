@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+   <!--google font for sofia-->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+    <!--bootstrap CDN-->
+    <!-- CSS only -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+     <!-- JS, Popper.js, and jQuery -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <!---->
+   <title>Airline Booking</title>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+ <div class="container">
+ <div class="jumbotron jumbotron-fluid " style="background-color: black;" >
+   <div class="container">
+   <center>
+     <h1 class="display-4" style="font-family: Times New Roman, Times, serif; color:lightseagreen " ><b>Airline Reservation System (CRUD)</b></h1>
+     <h4 class="lead" style="color:lightseagreen"><b>An Innitiative based on node.js, express.js and mongoDB!!</b></h4>
+		</center>
+   </div>
+   </div>
+
+
+   <marquee style="font-family:sofia; color: red; font-size:45px;">kindly navigate as and when provided and do provide an accessible email for appropriate responce!</marquee>
+   <br>
+<div class="row">  
+	
+  <div class="col-md-12">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><b>ARS</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link " href="#">Book a flight</a>
+          <a class="nav-link" href="/viewflight">View your flight</a>
+          <a class="nav-link active" href="/sample">Change your flight</a>
+           <a class="nav-link" href="/delete">Cancel your flight</a>
+        </div>
+  </div>
+</nav>
+</div>
+</div>
+<br><br>
+
+<div class="row">  
+            
+			 <div class="col-md-1">
+			</div><br>
+			<div class="col-md-6">
+        <div class="jumbotron jumbotron-fluid" style="background-color: #000;">
+			<div class="container">
+                
+                    <form action="/updateflight<%=`/${flight._id}/?_method=PUT`%>" method="post">
+                      <center>  <h1 style="font-family:sofia; color:#ffff"><b>Change Your Flight🛬!!!</b></h1></center>
+                   <label><b>From :</b></label>
+            <select class="form-control" name="user_from" value="<%= flight.user_from %>">
+              <option selected="selected" disabled >none</option>
+              <option value="India">India</option>
+              <option value="Canada">Canada</option>
+              <option value="America">U.S.A</option>
+              <option value="China">China</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Iran">Iran</option>
+            </select><br>
+					  <label><b>Departure :</b></label>
+					  <input type="date" name="user_depart" placeholder="user_dept" value="<%= flight.user_depart %>"  >
+					  <br> 
+					  <label><b>To :</b></label>
+            <select class="form-control" name="user_to" value="<%= flight.user_to %>" >
+              <option selected="selected" disabled >none</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Afghanistaan">Afghanistaan</option>
+              <option value="SriLanka">SriLanka</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Japan">Japan</option>
+              <option value="Indonesia">Indonesia</option>
+            </select><br>
+					  
+					  <label><b>Email Address :</b></label>
+					  <input type="email" name="user_email" placeholder="Email"  value="<%= flight.user_email %>"  >
+					  <br>
+					  <label><b>Airlines :</b></label>
+					  <select class="form-control" name="user_airline" value="<%= flight.user_airline %>">
+              <option selected="selected" disabled >none</option>
+              <option value="Air Canada">Air Canada Airline</option>
+              <option value="American Airline">American Airline</option>
+              <option value="Delta Airlines">Delta Airlines</option>
+              <option value="British Arirlines">British Arirlines</option>
+              <option value="Cathey Pacific">Cathey Pacific Arirlines</option>
+              <option value="Air India">Air India Airlines</option>
+            </select>
+					  <label><b>Seating :</b></label>
+            <select class="form-control" name="user_seating" value="<%= flight.user_seating%>">
+              <option selected="selected" disabled >none</option>
+              <option value="Window">Window</option>
+              <option value="Special">Special</option>
+            </select>
+            <br>
+            
+					 
+            
+                    <center>  <a href="/"><input type="submit" value="save" class="btn btn-info" ></a> </center>
+                    
+					  
+					  
+					 
+                    </form>
+                   
+                    
+                    
+			</div>
+			</div>
+			</div>
+	</div>		
+</div>	
+</body>
+</html>
